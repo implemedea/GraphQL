@@ -1,0 +1,15 @@
+query GetUserList {
+  users(order_by: {id: desc}) {
+    emailid
+    firstname
+  }
+}
+
+
+mutation AddUser($emailid: String = "", $firstname: String = "", $lastname: String = "") {
+  insert_users_one(object: {emailid: $emailid, firstname: $firstname, lastname: $lastname}) {
+    emailid
+    firstname
+    lastname
+  }
+}

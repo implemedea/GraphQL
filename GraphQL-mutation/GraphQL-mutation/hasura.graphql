@@ -1,0 +1,20 @@
+
+query MyQuery {
+  users {
+    emailid
+    firstname
+    id
+    lastname
+  }
+}
+
+mutation add_user {
+  insert_users(objects: {emailid: $emailid, firstname: $firstname, lastname: $lastname}) {
+    returning {
+      emailid
+      firstname
+      lastname
+      id
+    }
+  }
+}
